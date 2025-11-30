@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remote Desktop - Railway Server</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .info-box {
+            background: #f0f7ff;
+            border-left: 4px solid #2196F3;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .step {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+        .step h3 {
+            margin-top: 0;
+            color: #667eea;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        .status {
+            text-align: center;
+            padding: 15px;
+            background: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Remote Desktop Server</h1>
+        <p class="subtitle">Powered by Railway & Flask-SocketIO</p>
+        
+        <div class="status">
+            ✅ Server is running successfully!
+        </div>
+
+        <div class="info-box">
+            <h3>📋 How to Use</h3>
+            <p>This server handles signaling and communication between the desktop host and remote viewers.</p>
+        </div>
+
+        <div class="step">
+            <h3>Step 1: Download Desktop Client</h3>
+            <p>Run the <code>system32.exe</code> application on the computer you want to share.</p>
+        </div>
+
+        <div class="step">
+            <h3>Step 2: Configure Server URL</h3>
+            <p>Make sure your desktop client connects to:</p>
+            <code id="serverUrl"></code>
+        </div>
+
+        <div class="step">
+            <h3>Step 3: Share the Link</h3>
+            <p>The desktop app will generate a viewer link like:</p>
+            <code id="viewerUrl"></code>
+        </div>
+
+        <div class="step">
+            <h3>Step 4: Remote Control</h3>
+            <p>Viewers can access the link from anywhere to view and control the screen.</p>
+        </div>
+    </div>
+
+    <script>
+        const serverUrl = window.location.origin;
+        document.getElementById('serverUrl').textContent = serverUrl;
+        document.getElementById('viewerUrl').textContent = serverUrl + '/view/ROOM_ID';
+    </script>
+</body>
+</html>
