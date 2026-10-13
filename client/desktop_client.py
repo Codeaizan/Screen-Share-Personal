@@ -10,8 +10,8 @@ import webbrowser
 from flask import Flask, render_template_string
 
 # ==================== CONFIGURATION ====================
-# YOUR RAILWAY URL - Change this to your actual Railway deployment URL
-SERVER_URL = "https://web-production-6f5f6.up.railway.app"
+# YOUR RENDER URL - Change this to your actual Render deployment URL
+SERVER_URL = "https://your-service-name.onrender.com"
 
 # Local Flask server port for control panel
 PORT = 8080
@@ -407,7 +407,7 @@ def start():
     
     if not is_sharing:
         try:
-            # Connect to Railway server
+            # Connect to Render server
             sio.connect(SERVER_URL, wait_timeout=10, transports=['websocket', 'polling'])
             time.sleep(1)
             

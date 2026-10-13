@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: remote-desktop-server
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: cd server && pip install -r requirements.txt
+    startCommand: cd server && gunicorn --worker-class eventlet --workers 1 --timeout 0 --bind 0.0.0.0:$PORT app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9

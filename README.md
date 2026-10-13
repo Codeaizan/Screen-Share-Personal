@@ -1,6 +1,6 @@
 # 🖥️ Remote Desktop Control
 
-A lightweight, web-based remote desktop application that allows screen sharing and remote control over the internet. Built with Python, Flask, Socket.IO, and deployed on Railway.
+A lightweight, web-based remote desktop application that allows screen sharing and remote control over the internet. Built with Python, Flask, Socket.IO, and deployed on Render.
 
 ![Remote Desktop](https://img.shields.io/badge/Python-3.11+-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
@@ -26,8 +26,8 @@ A lightweight, web-based remote desktop application that allows screen sharing a
 
 ## 📋 Requirements
 
-### Server (Railway)
-- Railway account (free tier available)
+### Server (Render)
+- Render account (free tier available)
 - GitHub account
 
 ### Desktop Client
@@ -63,7 +63,7 @@ See [Installation Guide](docs/INSTALLATION.md) for detailed instructions.
 ## 🏗️ Architecture
 
 ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
-│ Desktop Client │ ◄─────► │ Railway Server │ ◄─────► │ Viewer │
+│ Desktop Client │ ◄─────► │  Render Server │ ◄─────► │ Viewer │
 │ (Windows) │ │ (Flask/Socket) │ │ (Browser) │
 └─────────────────┘ └─────────────────┘ └─────────────────┘
 Host PC Signal Server Remote User
@@ -72,7 +72,7 @@ Host PC Signal Server Remote User
 ### Components
 
 1. **Desktop Client** - Python application that captures screen and receives control commands
-2. **Railway Server** - Node.js/Flask server handling WebSocket connections and routing
+2. **Render Server** - Flask server handling WebSocket connections and routing
 3. **Web Viewer** - Browser-based interface for viewing and controlling the remote screen
 
 ## ⚙️ Configuration
@@ -95,7 +95,7 @@ FPS = 45 # Options: 15, 24, 30, 45, 60
 - ✅ Unique room IDs for each session
 - ✅ Dangerous system keys blocked (Ctrl, Alt, Win)
 - ✅ No persistent connections or data storage
-- ✅ HTTPS encryption (via Railway)
+- ✅ HTTPS encryption (via Render)
 - ✅ Temporary sessions (auto-cleanup on disconnect)
 
 ## 🔧 Performance Tips
@@ -142,7 +142,7 @@ FPS = 30
 - **PyInstaller** - Executable creation
 
 ### Deployment
-- **Railway** - Cloud hosting platform
+- **Render** - Cloud hosting platform
 - **Git** - Version control
 
 ## 🤝 Contributing
@@ -184,7 +184,7 @@ See [Troubleshooting Guide](docs/TROUBLESHOOTING.md) for solutions.
 ## 🙏 Acknowledgments
 
 - Flask and Socket.IO communities
-- Railway platform for free hosting
+- Render platform for free hosting
 - All contributors and users
 
 ## 📊 Project Status
