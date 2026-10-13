@@ -11,7 +11,7 @@ from flask import Flask, render_template_string
 
 # ==================== CONFIGURATION ====================
 # YOUR RENDER URL - Change this to your actual Render deployment URL
-SERVER_URL = "https://your-service-name.onrender.com"
+SERVER_URL = "https://screen-share-personal.onrender.com"
 
 # Local Flask server port for control panel
 PORT = 8080
